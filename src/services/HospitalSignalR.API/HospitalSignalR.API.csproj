@@ -11,4 +11,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\HospitalSignalR.Core\HospitalSignalR.Core.csproj" />
+      <ProjectReference Include="..\HospitalSignalR.Infraestructure\HospitalSignalR.Infraestructure.csproj" />
+    </ItemGroup>
+
 </Project>
