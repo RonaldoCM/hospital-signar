@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Patient } from "../types/patient";
-import { HubConnectionBuilder, LogLevel } from "@microsoft/signalr";
+import * as hub from '../services/hub';
 
 export const WaitTriage = () => {
   const [patient, setPatient] = useState<Patient>();
@@ -10,11 +10,7 @@ export const WaitTriage = () => {
   }, []);
 
   const startConnectionHub = async () => {
-    console.log('iniciando conexão com o Hub...');
-    const connection = new HubConnectionBuilder()
-    .withUrl("http://localhost:5184/hub/triage")
-    .configureLogging(LogLevel.Information)
-    .build();
+    const connection = hub.newConnection('triage');
 
     connection.on("TriageNotification", (data) => {
       setPatient(data);
