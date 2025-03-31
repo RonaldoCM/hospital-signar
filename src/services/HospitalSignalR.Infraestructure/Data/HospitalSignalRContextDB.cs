@@ -9,4 +9,5 @@ public class HospitalSignalRContextDb : DbContext
 
 	public DbSet<Patient> Patients { get; set; }
 	public DbSet<Triage> Triages { get; set; }
+	public DbSet<MedicalCare> Medicals { get; set; }
 }

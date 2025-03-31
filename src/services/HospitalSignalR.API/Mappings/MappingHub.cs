@@ -7,5 +7,6 @@ public static class MappingHub
 	public static void MapHubs(this WebApplication app)
 	{
 		app.MapHub<TriageHub>("/hub/triage");
+		app.MapHub<MedicalCareHub>("/hub/medicalCare");
 	}
 }

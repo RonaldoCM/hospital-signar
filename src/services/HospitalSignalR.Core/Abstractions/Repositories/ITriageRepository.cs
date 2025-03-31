@@ -1,10 +1,11 @@
 using HospitalSignalR.Core.Models;
 
-namespace HospitalSignalR.Core.Abstractions.Repositories;
-
-public interface ITriageRepository
+namespace HospitalSignalR.Core.Abstractions.Repositories
 {
-	Task Create(Patient patient);
-	Task Rate(Guid id, Triage triage);
-	Task<Patient?> GetNextPatient();
+    public interface ITriageRepository
+    {
+        Task Create(Patient patient);
+        Task Rate(Guid id, Triage triage);
+        Task<Patient?> GetNextPatient();
+    }
 }
